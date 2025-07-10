@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Mahasiswa</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #6FF7E8, #1F7EA1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      width: 420px;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 600;
+      color: #444;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      border-color: #229FCC;
+      box-shadow: 0 0 5px rgba(106, 17, 203, 0.3);
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    input[type="submit"] {
+      background: #229FCC;
+      background: linear-gradient(90deg, #018576, #1F7EA1);
+      color: white;
+      border: none;
+      padding: 14px 20px;
+      margin-top: 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+      transition: background 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background: linear-gradient(90deg, #00B09B, #229FCC);
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Form Mahasiswa</h2>
+    <form action="process.php" method="POST">
+      <label>Nama Lengkap</label>
+      <input type="text" name="nama" required>
+
+      <label>NIM</label>
+      <input type="text" name="nim" required>
+
+      <label>Email</label>
+      <input type="email" name="email" required>
+
+      <label>Jurusan</label>
+      <input type="text" name="jurusan" required>
+
+      <label>Alamat</label>
+      <input type="text" name="alamat" required>
+
+      <label>Pesan</label>
+      <textarea name="pesan" rows="4"></textarea>
+
+      <input type="submit" value="Kirim Data">
+    </form>
+  </div>
+</body>
+</html>
